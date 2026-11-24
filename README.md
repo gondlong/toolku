@@ -96,3 +96,7 @@ docker-compose.yml      # Multi-container setup: toolku + redis + libretranslate
 1. Register a new entry in `TOOLS` inside `app.py` (set `server=True` if it calls `/api/`).
 2. Create `templates/tools/<slug>.html` and `static/js/tools/<slug>.js`.
 3. The homepage card renders automatically.
+
+## License
+
+Free to use, modify, and distribute under the terms of the [LICENSE](LICENSE) file. Feel free to open an Issue in this repository if you encounter any bugs or have suggestions.
