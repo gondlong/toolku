@@ -1,0 +1,20 @@
+
+<div id="drop" class="tk-drop">🔐 Klik atau seret satu file PDF ke sini</div>
+<ul id="filelist" class="tk-filelist"></ul>
+<div id="opts" class="d-none mt-3">
+  <div class="row g-3">
+    <div class="col-md-6"><label class="form-label small">Password untuk membuka</label><input id="p-pass" type="password" class="form-control" placeholder="minimal 4 karakter"></div>
+    <div class="col-md-6"><label class="form-label small">Password pemilik (opsional)</label><input id="p-owner" type="password" class="form-control" placeholder="biarkan kosong = sama dengan password buka"></div>
+  </div>
+  <label class="form-label small mt-3">Izin yang diberikan</label>
+  <div class="d-flex flex-wrap gap-3">
+    <label class="form-check-label small"><input type="checkbox" class="form-check-input me-1 perm" value="print" checked>Allow printing</label>
+    <label class="form-check-label small"><input type="checkbox" class="form-check-input me-1 perm" value="copy">Allow copy text</label>
+    <label class="form-check-label small"><input type="checkbox" class="form-check-input me-1 perm" value="modify">Allow modify</label>
+    <label class="form-check-label small"><input type="checkbox" class="form-check-input me-1 perm" value="annotate">Allow annotate</label>
+  </div>
+  <p class="small text-secondary mt-2">Enkripsi AES-256 (PDF 2.0). Diolah di server, file dihapus otomatis setelah diproses.</p>
+  <button id="run" class="btn btn-tk mt-2">🔐 Lindungi PDF</button>
+  <div id="prog" class="small text-secondary mt-2"></div>
+</div>
+<div id="result" class="mt-3"></div>

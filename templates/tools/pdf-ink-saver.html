@@ -1,0 +1,15 @@
+
+<div id="drop" class="tk-drop">🖨️ Klik atau seret satu file PDF ke sini</div>
+<ul id="filelist" class="tk-filelist"></ul>
+<div id="opts" class="d-none mt-3">
+  <div class="row g-3">
+    <div class="col-md-4"><label class="form-label small">Mode</label>
+      <select id="mode" class="form-select"><option value="gray" selected>Grayscale (abu-abu)</option><option value="bw">Black &amp; White</option></select></div>
+    <div class="col-md-4"><label class="form-label small">Ambang (threshold): <span id="thr">160</span></label><input id="threshold" type="range" class="form-range" min="40" max="230" value="160"></div>
+    <div class="col-md-4"><label class="form-label small">Kualitas JPEG: <span id="ql">88</span>%</label><input id="quality" type="range" class="form-range" min="40" max="100" value="88"></div>
+  </div>
+  <p class="small text-secondary mt-2">Halaman dirender ulang jadi gambar, jadi teks menjadi bagian gambar (tak bisa dicari/seleksi lagi) — persis seperti mode cetak hemat tinta. Latar terang dibuat putih.</p>
+  <button id="run" class="btn btn-tk mt-2">🖨️ Hemat Tinta</button>
+  <div id="prog" class="small text-secondary mt-2"></div>
+</div>
+<div id="result" class="mt-3"></div>

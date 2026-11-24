@@ -1,0 +1,17 @@
+
+<div class="tk-result-card mb-3 d-flex flex-wrap gap-4 align-items-center">
+  <div><div class="small text-secondary">Unix sekarang (detik)</div><div class="fs-5 fw-bold tk-accent" id="now-s"></div></div>
+  <div><div class="small text-secondary">Unix sekarang (ms)</div><div class="fs-5 fw-bold tk-accent" id="now-ms"></div></div>
+</div>
+<div class="row g-3">
+  <div class="col-md-6">
+    <label class="form-label small">Unix timestamp → tanggal (detik atau ms, otomatis)</label>
+    <div class="input-group"><input id="ts" class="form-control tk-code" placeholder="1763625600"><button id="ts-run" class="btn btn-tk">→</button></div>
+    <div id="ts-out" class="mt-2"></div>
+  </div>
+  <div class="col-md-6">
+    <label class="form-label small">Tanggal → Unix timestamp</label>
+    <div class="input-group"><input id="dt" type="datetime-local" class="form-control" step="1"><button id="dt-run" class="btn btn-tk">→</button></div>
+    <div id="dt-out" class="mt-2"></div>
+  </div>
+</div>

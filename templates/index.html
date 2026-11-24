@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="tk-hero text-center py-5">
+  <h1 class="display-5 fw-bold tk-fade">Kumpulan tools gratis,<br><span class="tk-gradient">langsung di browser</span></h1>
+  <p class="lead text-secondary tk-fade tk-d1">{{ total }} tools untuk PDF, gambar, teks, sampai data developer — semuanya berjalan di perangkatmu. Tanpa akun, tanpa upload.</p>
+  <div class="tk-fade tk-d2 mx-auto" style="max-width:480px">
+    <input id="search" type="search" class="form-control form-control-lg tk-search" placeholder="🔍 Cari tools… (mis. pdf, qr, json)">
+  </div>
+</section>
+<div id="tools">
+{% for cat, tools in grouped %}
+<section class="tk-cat mb-5" data-cat="{{ cat }}">
+  <h2 class="h4 fw-bold mb-3 tk-cat-title">{{ cat }}</h2>
+  <div class="row g-3">
+    {% for t in tools %}
+    <div class="col-12 col-sm-6 col-lg-4 tk-card-wrap" data-name="{{ t.name|lower }} {{ t.desc|lower }}">
+      <a href="/tool/{{ t.slug }}" class="card tk-card h-100 text-decoration-none">
+        <div class="card-body">
+          <div class="d-flex align-items-center gap-2 mb-2">
+            <span class="tk-icon">{{ t.icon }}</span>
+            <h3 class="h6 mb-0 fw-bold">{{ t.name }}</h3>
+          </div>
+          <p class="small text-secondary mb-0">{{ t.desc }}</p>
+          {% if t.get('server') %}<span class="badge tk-badge-server mt-2">server-side · file dihapus otomatis</span>{% endif %}
+        </div>
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endfor %}
+<p id="noresult" class="text-center text-secondary d-none py-5">Tidak ada tools yang cocok. Coba kata kunci lain.</p>
+</div>
+{% endblock %}
+{% block scripts %}
+<script src="/static/js/index.js"></script>
+{% endblock %}

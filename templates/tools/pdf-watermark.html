@@ -1,0 +1,29 @@
+
+<div id="drop" class="tk-drop">💧 Klik atau seret satu file PDF ke sini</div>
+<ul id="filelist" class="tk-filelist"></ul>
+<div id="opts" class="d-none mt-3">
+  <div class="row g-3">
+    <div class="col-md-6">
+      <label class="form-label small">Teks watermark</label>
+      <input id="wm-text" class="form-control" value="RAHASIA" maxlength="60">
+    </div>
+    <div class="col-md-3">
+      <label class="form-label small">Mode</label>
+      <select id="wm-mode" class="form-select"><option value="center">Tengah (diagonal)</option><option value="tile">Berulang (tiled)</option></select>
+    </div>
+    <div class="col-md-3">
+      <label class="form-label small">Ukuran font</label>
+      <input id="wm-size" type="number" class="form-control" value="48" min="8" max="200">
+    </div>
+    <div class="col-md-3">
+      <label class="form-label small">Opasitas (%)</label>
+      <input id="wm-opacity" type="number" class="form-control" value="15" min="1" max="100">
+    </div>
+    <div class="col-md-3">
+      <label class="form-label small">Warna</label>
+      <input id="wm-color" type="color" class="form-control form-control-color" value="#888888">
+    </div>
+  </div>
+  <button id="run" class="btn btn-tk mt-3">💧 Pasang Watermark</button>
+</div>
+<div id="result" class="mt-3"></div>

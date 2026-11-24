@@ -1,0 +1,37 @@
+# Environment & Secrets (NEVER commit real .env)
+.env
+.env.*
+!.env.example
+
+# Local Audit & Temporary Reports
+audit_report.txt
+*.log
+
+# Python Bytecode & Caches
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual Environments
+venv/
+.venv/
+env/
+ENV/
+
+# Ephemeral Job Artifacts
+tk_pdf_jobs/
+tmp/
+temp/
+
+# OS & Editor Files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo

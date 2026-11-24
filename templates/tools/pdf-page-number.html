@@ -1,0 +1,30 @@
+
+<div id="drop" class="tk-drop">🔢 Klik atau seret satu file PDF ke sini</div>
+<ul id="filelist" class="tk-filelist"></ul>
+<div id="opts" class="d-none mt-3">
+  <div class="row g-3">
+    <div class="col-md-3">
+      <label class="form-label small">Posisi</label>
+      <select id="pn-pos" class="form-select">
+        <option value="bc" selected>Bawah tengah</option><option value="br">Bawah kanan</option><option value="bl">Bawah kiri</option>
+        <option value="tc">Atas tengah</option><option value="tr">Atas kanan</option><option value="tl">Atas kiri</option>
+      </select>
+    </div>
+    <div class="col-md-3">
+      <label class="form-label small">Format</label>
+      <select id="pn-fmt" class="form-select">
+        <option value="n">1</option><option value="nn">1 / 10</option><option value="hal">Halaman 1</option>
+      </select>
+    </div>
+    <div class="col-md-3">
+      <label class="form-label small">Mulai dari angka</label>
+      <input id="pn-start" type="number" class="form-control" value="1" min="0">
+    </div>
+    <div class="col-md-3">
+      <label class="form-label small">Ukuran font</label>
+      <input id="pn-size" type="number" class="form-control" value="11" min="6" max="48">
+    </div>
+  </div>
+  <button id="run" class="btn btn-tk mt-3">🔢 Tambah Nomor Halaman</button>
+</div>
+<div id="result" class="mt-3"></div>

@@ -1,0 +1,75 @@
+services:
+  toolku:
+    build: .
+    # No hard-coded container_name: compose derives <project>_<service>, so
+    # several ToolKu instances can coexist on one host without name clashes.
+    ports:
+      - "${TOOLKU_PORT:-8000}:8000"
+    environment:
+      # LibreTranslate runs as a separate service (see below).
+      LT_URL: "http://libretranslate:5000"
+      # Shared Redis store for consistent multi-worker rate limiting.
+      REDIS_URL: "${REDIS_URL:-redis://redis:6379/0}"
+      # Set a fixed secret so sessions survive restarts. CHANGE THIS.
+      SECRET_KEY: "${SECRET_KEY:-ganti-dengan-random-32-byte-string}"
+      # Set to 1 only when serving over HTTPS (secure cookie flag).
+      TOOLKU_SECURE_COOKIES: "${TOOLKU_SECURE_COOKIES:-0}"
+    depends_on:
+      libretranslate:
+        condition: service_healthy
+    deploy:
+      resources:
+        limits:
+          cpus: "1.5"
+          memory: 1G
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+    # Batasi RAM maks 64 MB, hapus key lama otomatis (LRU), dan matikan disk persistence
+    # karena data rate-limit bersifat sementara (TTL 60 detik).
+    command: redis-server --maxmemory 64mb --maxmemory-policy allkeys-lru --save "" --appendonly no
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+    deploy:
+      resources:
+        limits:
+          cpus: "0.25"
+          memory: 96M
+    restart: unless-stopped
+
+  libretranslate:
+    image: libretranslate/libretranslate:latest-cuda
+    environment:
+      # Only load the languages you actually use — keeps RAM and boot time low.
+      # Bahasa yang di-load: en (Inggris), zh (Mandarin), ar (Arab),
+      # ja (Jepang), ko (Korea), id (Indonesia).
+      # Kosongkan LT_LOAD_ONLY di .env untuk load semua bahasa (±100 bahasa,
+      # butuh ±4-6 GB RAM untuk model Argos).
+      LT_LOAD_ONLY: "${LT_LOAD_ONLY:-en,zh,ar,ja,ko,id}"
+      ARGOS_DEVICE_TYPE: "cuda"
+    volumes:
+      - lt_models:/home/libretranslate/.local/share/argos-translate
+    healthcheck:
+      test: ["CMD-SHELL", "python -c \"import urllib.request,sys; sys.exit(0 if urllib.request.urlopen('http://127.0.0.1:5000/languages', timeout=5).status==200 else 1)\""]
+      interval: 15s
+      timeout: 10s
+      retries: 20
+      start_period: 60s
+    deploy:
+      resources:
+        limits:
+          cpus: "1.5"
+          memory: 4G
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    restart: unless-stopped
+
+volumes:
+  lt_models:

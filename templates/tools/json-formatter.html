@@ -1,0 +1,18 @@
+
+<label class="form-label small">JSON input</label>
+<textarea id="input" class="form-control tk-code" rows="9" placeholder='{"nama":"Heru","tools":["pdf","qr"]}'></textarea>
+<div class="d-flex flex-wrap gap-2 mt-2 align-items-center">
+  <select id="indent" class="form-select form-select-sm" style="width:auto">
+    <option value="2">Indent 2 spasi</option><option value="4">Indent 4 spasi</option><option value="tab">Indent tab</option>
+  </select>
+  <button id="format" class="btn btn-tk btn-sm">✨ Rapikan</button>
+  <button id="minify" class="btn btn-outline-info btn-sm">📦 Minify</button>
+  <button id="validate" class="btn btn-outline-info btn-sm">✅ Validasi</button>
+</div>
+<div id="status" class="small mt-2"></div>
+<label class="form-label small mt-3">Hasil</label>
+<textarea id="output" class="form-control tk-code" rows="9" readonly></textarea>
+<div class="d-flex gap-2 mt-2">
+  <button id="copy" class="btn btn-outline-info btn-sm">📋 Salin</button>
+  <button id="dl" class="btn btn-outline-info btn-sm">⬇️ Unduh .json</button>
+</div>

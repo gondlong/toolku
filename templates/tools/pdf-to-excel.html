@@ -1,0 +1,15 @@
+
+<div id="drop" class="tk-drop">📈 Klik atau seret satu file PDF ke sini</div>
+<ul id="filelist" class="tk-filelist"></ul>
+<div id="opts" class="d-none mt-3">
+  <div class="row g-3">
+    <div class="col-md-4"><label class="form-label small">Deteksi tabel</label>
+      <select id="detect" class="form-select"><option value="auto" selected>Otomatis</option><option value="always">Selalu sebagai tabel</option><option value="never" selected>Selalu sebagai daftar teks</option></select></div>
+    <div class="col-md-4"><label class="form-label small">Pembatas kolom</label><input id="gap" type="number" class="form-control" value="12" min="4" max="60"></div>
+    <div class="col-md-4"><label class="form-label small">Halaman pertama</label><input id="first" type="number" class="form-control" value="1" min="1"></div>
+  </div>
+  <p class="small text-secondary mt-2">Baris teks dikelompokkan berdasarkan posisi X menjadi kolom. Teks yang terlihat seperti angka dikonversi jadi number.</p>
+  <button id="run" class="btn btn-tk mt-2">📈 PDF ke Excel</button>
+  <div id="prog" class="small text-secondary mt-2"></div>
+</div>
+<div id="result" class="mt-3"></div>

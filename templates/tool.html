@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}{{ t.name }} — ToolKu{% endblock %}
+{% block desc %}{{ t.desc }}{% endblock %}
+{% block content %}
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb small">
+    <li class="breadcrumb-item"><a href="/" class="tk-link">Home</a></li>
+    <li class="breadcrumb-item"><a href="/#tools" class="tk-link">{{ t.cat }}</a></li>
+    <li class="breadcrumb-item active">{{ t.name }}</li>
+  </ol>
+</nav>
+<div class="tk-tool-head mb-4">
+  <h1 class="h3 fw-bold"><span class="tk-icon me-2">{{ t.icon }}</span>{{ t.name }}</h1>
+  <p class="text-secondary mb-0">{{ t.desc }}</p>
+  {% if t.get('server') %}
+  <p class="small text-warning mb-0 mt-1">🔹 Server-side — file dikirim ke server ini, diproses, lalu langsung dihapus.</p>
+  {% else %}
+  <p class="small text-success mb-0 mt-1">🔒 Diproses lokal di browser — file tidak diupload.</p>
+  {% endif %}
+</div>
+<div class="card tk-panel">
+  <div class="card-body p-4">
+    {% include "tools/" + t.slug + ".html" %}
+  </div>
+</div>
+<div id="tk-alert" class="mt-3"></div>
+{% endblock %}
+{% block scripts %}
+{% for lib in t.libs %}<script src="/static/vendor/{{ lib }}"></script>
+{% endfor %}
+{% if t.slug in ['pdf-sign','pdf-edit','pdf-redact','pdf-ink-saver','pdf-to-word','pdf-to-excel','pdf-to-pptx','pdf-to-dwg'] %}<script src="/static/vendor/tkpdf.js"></script>
+{% endif %}
+<script src="/static/js/common.js"></script>
+<script src="/static/js/tools/{{ t.slug }}.js"></script>
+{% endblock %}

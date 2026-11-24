@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="id" data-bs-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}ToolKu — Kumpulan tools gratis, langsung di browser{% endblock %}</title>
+<meta name="description" content="{% block desc %}Kumpulan tools gratis untuk PDF, gambar, teks, dan developer — semuanya berjalan di perangkatmu. Tanpa akun, tanpa upload.{% endblock %}">
+<meta name="csrf-token" content="{{ csrf_token() }}">
+<link rel="stylesheet" href="/static/vendor/bootstrap.min.css">
+<link rel="stylesheet" href="/static/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧰</text></svg>">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg sticky-top tk-nav">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="/">🧰 Tool<span class="tk-accent">Ku</span></a>
+    <div class="d-flex align-items-center gap-3">
+      <a class="nav-link d-none d-sm-block" href="/#tools">Semua Tools</a>
+      <span class="badge tk-badge">Mixed · PDF di server</span>
+      {% if t and t.get('server') %}<span class="badge tk-badge-server">server-side</span>{% endif %}
+    </div>
+  </div>
+</nav>
+<main class="container py-4">
+{% block content %}{% endblock %}
+</main>
+<footer class="tk-footer py-4 mt-5">
+  <div class="container text-center small">
+    <p class="mb-1">🔒 Sebagian tools berjalan di browser — PDF & terjemahan memakai server (self-hosted).</p>
+    <p class="mb-0 text-secondary">ToolKu &copy; <span id="year"></span> — dibuat oleh Heru · <a href="https://www.ndlong.my.id" class="tk-link">ndlong.my.id</a></p>
+  </div>
+</footer>
+<script src="/static/vendor/bootstrap.bundle.min.js"></script>
+<script src="/static/js/base.js"></script>
+{% block scripts %}{% endblock %}
+</body>
+</html>

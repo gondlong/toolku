@@ -1,0 +1,22 @@
+
+<div class="row g-3">
+  <div class="col-md-4">
+    <label class="form-label small">Pilih warna</label>
+    <input id="picker" type="color" class="form-control form-control-color w-100" value="#38bdf8" style="height:60px">
+    <label class="form-label small mt-2">HEX</label>
+    <div class="input-group"><input id="hex" class="form-control tk-code" value="#38bdf8" maxlength="7"><button id="hex-copy" class="btn btn-outline-info">📋</button></div>
+  </div>
+  <div class="col-md-4">
+    <div class="tk-swatch" id="swatch"></div>
+    <label class="form-label small mt-2">RGB</label>
+    <div class="input-group"><input id="rgb" class="form-control tk-code" readonly><button id="rgb-copy" class="btn btn-outline-info">📋</button></div>
+    <label class="form-label small mt-2">HSL</label>
+    <div class="input-group"><input id="hsl" class="form-control tk-code" readonly><button id="hsl-copy" class="btn btn-outline-info">📋</button></div>
+  </div>
+  <div class="col-md-4">
+    <label class="form-label small">Atau ketik RGB / HSL</label>
+    <input id="manual" class="form-control tk-code" placeholder="rgb(56,189,248) / hsl(199,92%,60%)">
+    <button id="manual-run" class="btn btn-tk btn-sm mt-2">Terapkan</button>
+    <div class="small text-secondary mt-3">Contoh: <code>#0ea5e9</code>, <code>rgb(14,165,233)</code>, <code>hsl(199,89%,48%)</code></div>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+
+<div id="drop" class="tk-drop">🖼️ Klik atau seret satu file PDF ke sini</div>
+<ul id="filelist" class="tk-filelist"></ul>
+<div id="opts" class="d-none mt-3">
+  <div class="row g-3">
+    <div class="col-md-4">
+      <label class="form-label small">Format</label>
+      <select id="fmt" class="form-select"><option value="png">PNG</option><option value="jpeg">JPG</option></select>
+    </div>
+    <div class="col-md-4">
+      <label class="form-label small">Resolusi</label>
+      <select id="scale" class="form-select">
+        <option value="1">1x (72 dpi)</option>
+        <option value="2" selected>2x (144 dpi)</option>
+        <option value="3">3x (216 dpi)</option>
+        <option value="4">4x (288 dpi)</option>
+      </select>
+    </div>
+    <div class="col-md-4">
+      <label class="form-label small">Kualitas JPG</label>
+      <input id="quality" type="number" class="form-control" value="92" min="10" max="100">
+    </div>
+  </div>
+  <button id="run" class="btn btn-tk mt-3">🖼️ Konversi ke Gambar</button>
+</div>
+<div id="prog" class="small text-secondary mt-2"></div>
+<div id="result" class="mt-3"></div>

@@ -1,0 +1,51 @@
+
+<div id="drop" class="tk-drop">🖊️ Klik atau seret satu file PDF ke sini</div>
+<ul id="filelist" class="tk-filelist"></ul>
+<div id="editor" class="d-none mt-3">
+  <ul class="nav nav-tabs mb-3" id="tools-tabs">
+    <li class="nav-item"><button class="nav-link active" data-tool="select">🖱️ Pilih</button></li>
+    <li class="nav-item"><button class="nav-link" data-tool="text">🔤 Teks</button></li>
+    <li class="nav-item"><button class="nav-link" data-tool="image">🖼️ Gambar</button></li>
+    <li class="nav-item"><button class="nav-link" data-tool="rect">▭ Kotak</button></li>
+    <li class="nav-item"><button class="nav-link" data-tool="line">╱ Garis</button></li>
+    <li class="nav-item"><button class="nav-link" data-tool="check">✓ Centang</button></li>
+    <li class="nav-item"><button class="nav-link" data-tool="scribble">〰 Coretan</button></li>
+  </ul>
+  <div class="row g-3">
+    <div class="col-md-8">
+      <div class="row g-2 align-items-center mb-2">
+        <div class="col-auto"><label class="form-label small mb-0 me-1">Halaman</label></div>
+        <div class="col-auto"><input id="pg-num" type="number" class="form-control form-control-sm" style="width:70px" value="1" min="1"></div>
+        <div class="col-auto"><span id="pg-total" class="small text-secondary"></span></div>
+        <div class="col-auto ms-auto"><button id="pg-prev" class="btn btn-sm btn-outline-secondary">‹</button><button id="pg-next" class="btn btn-sm btn-outline-secondary">›</button></div>
+      </div>
+      <div id="canvas-wrap" style="position:relative;overflow:auto;background:#0d1425;border:1px solid #24304a;border-radius:.5rem;padding:.5rem">
+        <canvas id="pdf-canvas" style="display:block;max-width:100%"></canvas>
+        <canvas id="overlay" style="position:absolute;left:.5rem;top:.5rem"></canvas>
+      </div>
+      <p class="small text-secondary mt-1">Klik untuk tempatkan elemen. Elemen yang sudah placed bisa dipilih & dihapus (klik + Delete).</p>
+    </div>
+    <div class="col-md-4">
+      <div id="panel-text" class="d-none">
+        <label class="form-label small">Isi teks</label><input id="t-text" class="form-control" value="Teks">
+        <label class="form-label small mt-2">Font</label><select id="t-font" class="form-select"><option>Helvetica</option><option>HelveticaBold</option><option>TimesRoman</option><option>Courier</option></select>
+        <label class="form-label small mt-2">Ukuran</label><input id="t-size" type="number" class="form-control" value="14">
+        <label class="form-label small mt-2">Warna</label><input id="t-color" type="color" class="form-control form-control-color" value="#000000">
+      </div>
+      <div id="panel-image" class="d-none">
+        <label class="form-label small">Pilih gambar</label><input id="i-file" type="file" accept="image/*" class="form-control">
+        <div id="i-preview" class="mt-2 small text-secondary"></div>
+      </div>
+      <div id="panel-shape" class="d-none">
+        <label class="form-label small">Warna</label><input id="s-color" type="color" class="form-control form-control-color" value="#dc2626">
+        <label class="form-label small mt-2">Ketebalan garis</label><input id="s-width" type="number" class="form-control" value="2">
+      </div>
+      <div id="panel-list" class="small text-secondary"></div>
+      <button id="undo" class="btn btn-outline-secondary btn-sm mt-3">↶ Undo</button>
+      <button id="clear-all" class="btn btn-outline-secondary btn-sm mt-3">🗑 Hapus semua</button>
+      <button id="run" class="btn btn-tk mt-3 w-100">💾 Simpan PDF</button>
+    </div>
+  </div>
+  <div id="prog" class="small text-secondary mt-2"></div>
+</div>
+<div id="result" class="mt-3"></div>

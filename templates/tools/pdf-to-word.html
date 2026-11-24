@@ -1,0 +1,15 @@
+
+<div id="drop" class="tk-drop">📝 Klik atau seret satu file PDF ke sini</div>
+<ul id="filelist" class="tk-filelist"></ul>
+<div id="opts" class="d-none mt-3">
+  <div class="row g-3">
+    <div class="col-md-4"><label class="form-label small">Ukuran font (pt)</label><input id="fsize" type="number" class="form-control" value="11" min="6" max="24"></div>
+    <div class="col-md-4"><label class="form-label small">Mode</label>
+      <select id="mode" class="form-select"><option value="flow" selected>Alur teks (bisa diedit)</option><option value="layout" selected>Pertahankan tata letak</option></select></div>
+    <div class="col-md-4"><label class="form-label small">Pemrosesan</label><input id="proc" class="form-control" value="Server (DOCX asli)" readonly></div>
+  </div>
+  <p class="small text-secondary mt-2">Teks diekstrak per halaman lalu disusun ulang menjadi paragraf Word. Baris yang sejajar digabung jadi satu paragraf.</p>
+  <button id="run" class="btn btn-tk mt-2">📝 PDF ke Word</button>
+  <div id="prog" class="small text-secondary mt-2"></div>
+</div>
+<div id="result" class="mt-3"></div>

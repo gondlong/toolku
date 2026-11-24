@@ -1,0 +1,14 @@
+
+<div id="drop" class="tk-drop">🗜️ Klik atau seret gambar ke sini (JPG, PNG, WebP)</div>
+<div id="fileinfo" class="small text-secondary mt-2"></div>
+<div id="opts" class="d-none mt-3">
+  <div class="row g-3">
+    <div class="col-md-3"><label class="form-label small">Lebar maks (px, 0 = asli)</label><input id="maxw" type="number" class="form-control" value="0" min="0"></div>
+    <div class="col-md-3"><label class="form-label small">Tinggi maks (px, 0 = asli)</label><input id="maxh" type="number" class="form-control" value="0" min="0"></div>
+    <div class="col-md-3"><label class="form-label small">Format keluaran</label>
+      <select id="fmt" class="form-select"><option value="jpeg" selected>JPG</option><option value="webp">WebP</option><option value="png">PNG</option></select></div>
+    <div class="col-md-3"><label class="form-label small">Kualitas: <span id="qlabel">80</span>%</label><input id="quality" type="range" class="form-range" min="10" max="100" value="80"></div>
+  </div>
+  <button id="run" class="btn btn-tk mt-3">🗜️ Kompres Gambar</button>
+</div>
+<div id="result" class="mt-3"></div>

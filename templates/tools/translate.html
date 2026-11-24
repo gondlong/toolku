@@ -1,0 +1,77 @@
+<div class="mb-3">
+  <label for="source-lang" class="form-label small">Sumber:</label>
+  <select class="form-select form-select-sm" id="source-lang">
+    <option value="auto">Mengdeteksi otomatis (auto)</option>
+    <option value="id">Bahasa Indonesia (id)</option>
+    <option value="en">English (en)</option>
+    <option value="ja">日本語 (ja)</option>
+    <option value="zh">中文 (zh)</option>
+    <option value="ko">한국어 (ko)</option>
+    <option value="fr">Français (fr)</option>
+    <option value="de">Deutsch (de)</option>
+    <option value="es">Español (es)</option>
+    <option value="pt">Português (pt)</option>
+    <option value="ru">Русский (ru)</option>
+    <option value="ar">العربية (ar)</option>
+    <option value="it">Italiano (it)</option>
+    <option value="hi">हिन्दी (hi)</option>
+    <option value="nl">Nederlands (nl)</option>
+    <option value="sv">Svenska (sv)</option>
+    <option value="pl">Polski (pl)</option>
+    <option value="tr">Türkçe (tr)</option>
+    <option value="th">ไทย (th)</option>
+    <option value="vi">Tiếng Việt (vi)</option>
+    <option value="ms">Bahasa Malaysia (ms)</option>
+    <option value="tl">Filipino (tl)</option>
+    <option value="cmn">普通话 (cmn)</option>
+    <option value="jpn">日本語 (jpn)</option>
+    <option value="kor">한국어 (kor)</option>
+    <option value="vie">Tiếng Việt (vie)</option>
+  </select>
+</div>
+<div class="mb-3">
+  <label for="target-lang" class="form-label small">Target:</label>
+  <select class="form-select form-select-sm" id="target-lang">
+    <option value="id">Bahasa Indonesia (id)</option>
+    <option value="en">English (en)</option>
+    <option value="ja">日本語 (ja)</option>
+    <option value="zh">中文 (zh)</option>
+    <option value="ko">한국어 (ko)</option>
+    <option value="fr">Français (fr)</option>
+    <option value="de">Deutsch (de)</option>
+    <option value="es">Español (es)</option>
+    <option value="pt">Português (pt)</option>
+    <option value="ru">Русский (ru)</option>
+    <option value="ar">العربية (ar)</option>
+    <option value="it">Italiano (it)</option>
+    <option value="hi">हिन्दी (hi)</option>
+    <option value="nl">Nederlands (nl)</option>
+    <option value="sv">Svenska (sv)</option>
+    <option value="pl">Polski (pl)</option>
+    <option value="tr">Türkçe (tr)</option>
+    <option value="th">ไทย (th)</option>
+    <option value="vi">Tiếng Việt (vi)</option>
+    <option value="ms">Bahasa Malaysia (ms)</option>
+    <option value="tl">Filipino (tl)</option>
+  </select>
+</div>
+<div class="mb-3">
+  <label for="input-text" class="form-label small">Teks:</label>
+  <textarea class="form-control form-control-sm" id="input-text" rows="6" placeholder="Ketik atau tempel teks untuk diterjemahkan..."></textarea>
+</div>
+<div class="d-flex flex-wrap gap-2">
+  <button class="btn btn-primary btn-sm" id="btn-translate">🌐 Terjemahkan</button>
+  <button class="btn btn-outline-secondary btn-sm" id="btn-clear">✕ Clear</button>
+</div>
+<div class="card mt-3 tk-panel" style="max-height: 400px; overflow: auto;">
+  <div class="card-body p-3">
+    <div class="d-flex justify-content-between align-items-center mb-2">
+      <h6 class="mb-0 small">Hasil Terjemahan:</h6>
+      <button class="btn btn-sm btn-outline-secondary" id="btn-copy">📋 Salin</button>
+    </div>
+    <div id="output" class="bg-secondary-subtle rounded p-2 small" style="min-height: 80px; font-size: 0.85rem;">
+      <p class="text-muted mb-0">Hasil akan muncul di sini setelah menerjemahkan...</p>
+    </div>
+  </div>
+</div>
+<div id="tk-alert" class="mt-3"></div>

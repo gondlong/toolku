@@ -1,0 +1,28 @@
+
+<div id="drop" class="tk-drop">📷 Klik atau seret gambar ke sini (JPG, PNG, WebP, GIF, BMP)</div>
+<ul id="filelist" class="tk-filelist"></ul>
+<div class="row g-3 mt-1">
+  <div class="col-md-4">
+    <label class="form-label small">Ukuran kertas</label>
+    <select id="size" class="form-select">
+      <option value="a4" selected>A4</option>
+      <option value="letter">Letter</option>
+      <option value="fit">Pas gambar (tanpa kertas tetap)</option>
+    </select>
+  </div>
+  <div class="col-md-4">
+    <label class="form-label small">Orientasi</label>
+    <select id="orient" class="form-select">
+      <option value="auto" selected>Otomatis (ikuti gambar)</option>
+      <option value="portrait">Portrait</option>
+      <option value="landscape">Landscape</option>
+    </select>
+  </div>
+  <div class="col-md-4">
+    <label class="form-label small">Margin (pt)</label>
+    <input id="margin" type="number" class="form-control" value="20" min="0">
+  </div>
+</div>
+<button id="run" class="btn btn-tk mt-3" disabled>📄 Buat PDF</button>
+<div id="prog" class="small text-secondary mt-2"></div>
+<div id="result" class="mt-3"></div>

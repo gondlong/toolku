@@ -1,0 +1,19 @@
+
+<div class="d-flex gap-2 mb-2 align-items-center">
+  <select id="mode" class="form-select form-select-sm" style="width:auto">
+    <option value="component">Komponen URL (encodeURIComponent)</option>
+    <option value="uri">URL penuh (encodeURI)</option>
+  </select>
+  <button id="swap" class="btn btn-outline-secondary btn-sm ms-auto">⇅ Tukar input/hasil</button>
+</div>
+<label class="form-label small">Input</label>
+<textarea id="input" class="form-control tk-code" rows="5" placeholder="https://contoh.id/cari?q=kopi susu&hal=1"></textarea>
+<div class="d-flex gap-2 mt-2">
+  <button id="enc" class="btn btn-tk btn-sm">🔗 Encode</button>
+  <button id="dec" class="btn btn-outline-info btn-sm">🔓 Decode</button>
+</div>
+<label class="form-label small mt-3">Hasil</label>
+<textarea id="output" class="form-control tk-code" rows="5" readonly></textarea>
+<div class="d-flex gap-2 mt-2">
+  <button id="copy" class="btn btn-outline-info btn-sm">📋 Salin</button>
+</div>
